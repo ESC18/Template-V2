@@ -1,0 +1,34 @@
+/*
+
+NOTE: This stylesheet is used simply for the purpose of storing additional fonts:
+1. Asap
+2. Bungee
+3. Bungee Shade
+4. Flow Block
+5. Flow Circular
+6. IBM Plex Mono
+7. Roboto
+8. Roboto Mono
+9. Space Mono
+10. Josefin Sans
+11. Open Sans
+12. Quicksand
+13. Ubuntu
+14. Permanent Marker
+15. Dosis
+16. Caveat
+17. Amatic SC
+18. Orbitron
+19. Changa
+20. Source Serif 4
+21. Rokkitt
+22. Alegreya Sans SC
+23. Poiret One
+24. PT Mono
+25. Ropa Sans
+
+All of these fonts were obtained from https://fonts.google.com
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Amatic+SC&family=Asap&family=Bungee&family=Bungee+Shade&family=Caveat&family=Changa&family=Dosis&family=Flow+Block&family=Flow+Circular&family=IBM+Plex+Mono:wght@500&family=Josefin+Sans&family=Open+Sans&family=Orbitron&family=PT+Mono&family=Permanent+Marker&family=Poiret+One&family=Quicksand:wght@500&family=Roboto&family=Roboto+Mono&family=Rokkitt&family=Ropa+Sans&family=Source+Serif+4&family=Space+Mono&family=Ubuntu&display=swap');
