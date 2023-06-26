@@ -7,7 +7,15 @@
     <link rel="icon" type="image/x-icon" href="assets/images/SC.png">
 </head>
 <body>
-    <p>hello world 🌎</p>
-    <img src="./assets/images/SC.png" width="200px">
+    <div class="container">
+        <h1>The ULTIMATE Weather Channel</h1>
+        <p>Enter in your city and state, seperated via a comma. EX: Portland, Oregon.</p>
+        <form>
+          <label for="location">Enter a location:</label>
+          <input id="location" type="text" placeholder="City, State" name="location">
+          <button type="submit" class="btn-success" id="weatherLocation">Get Current Temperature and Humidity</button>
+        </form>
+        <p id="showResponse"></p>
+      </div>
 </body>
 </html>
