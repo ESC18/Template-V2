@@ -29,14 +29,14 @@ function getWeather(city) {
 
 // UI Logic
 
-function printElements(apiResponse, city, state) {
-    document.querySelector('#showResponse').innerText = `The humidity in ${city}, ${state} is ${apiResponse.main.humidity}%.
-    The temperature in Kelvins is ${apiResponse.main.temp} degrees.`;
+function printElements(results) {
+    document.querySelector('#showResponse').innerText = `The humidity in ${results[1]} is ${results[0].main.humidity}%.
+    The temperature in Kelvins is ${results[0].main.temp} degrees.`;
 }
 
 function printError(error) {
     document.querySelector('#showResponse').innerText = `There was an error accessing the weather data for ${error[2]}: ${error[0].status} ${error[0].statusText}: ${error[1].message}`;
-  }
+}
 
 function handleFormSubmission(event) {
     event.preventDefault();
