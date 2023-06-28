@@ -4,38 +4,31 @@ import './assets/fonts.css';
 import './css/styles.css';
 //EX: import Blank from '/.js/secondary.js';
 
+import WeatherService from './weather-service.js'
+
+// Business Logic
+
 function getWeather(city) {
-    let promise = new Promise(function (resolve, reject) {
-        let request = new XMLHttpRequest();
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`;
-        request.addEventListener("loadend", function () {
-            const response = JSON.parse(this.responseText);
-            if (this.status === 200) {
-                resolve([response, city]);
+    WeatherService.getWeather(city)
+        .then(function (response) {
+            if (response.main) {
+                printElements(response, city);
             } else {
-                reject([this, response, city]);
+                printError(response, city);
             }
         });
-        request.open("GET", url, true);
-        request.send();
-    });
-
-    promise.then(function (response) {
-        printElements(response);
-    }, function (errorMessage) {
-        printError(errorMessage);
-    });
 }
 
 // UI Logic
 
-function printElements(results) {
-    document.querySelector('#showResponse').innerText = `The humidity in ${results[1]} is ${results[0].main.humidity}%.
-    The temperature in Kelvins is ${results[0].main.temp} degrees.`;
+function printElements(response, city) {
+    document.querySelector('#showResponse').innerText = `The humidity in ${city} is ${response.main.humidity}%.
+    The temperature in Kelvins is ${response.main.temp} degrees.`;
 }
 
-function printError(error) {
-    document.querySelector('#showResponse').innerText = `There was an error accessing the weather data for ${error[2]}: ${error[0].status} ${error[0].statusText}: ${error[1].message}`;
+function printError(error, city) {
+    document.querySelector('#showResponse').innerText = `There was an error accessing the weather data for ${city}: 
+    ${error}.`;
 }
 
 function handleFormSubmission(event) {
